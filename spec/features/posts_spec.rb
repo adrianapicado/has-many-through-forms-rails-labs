@@ -13,8 +13,8 @@ describe 'Posts', type: 'feature' do
 
     it 'can create a post without a new category' do
       click_button('Create Post')
-      @categories = Post.last.categories
-      expect(@categories).to be_empty
+      @category = Post.last.categories.first.name
+      expect(@category).to be_empty
       expect(page).to have_content('Feeling Awesome')
     end
 
@@ -79,3 +79,4 @@ describe 'Posts', type: 'feature' do
     end
   end
 end
+
